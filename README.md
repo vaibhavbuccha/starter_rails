@@ -22,7 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
----
+----------------------------
 #### Access mysql databases
 
 * for auth
@@ -34,7 +34,7 @@ mysql -u root -p
 ```bash
 show databases;
 ```
----
+
 * for use an database
 ```bash
 use dbname;
@@ -44,6 +44,13 @@ use dbname;
 show tables;
 ```
 
+* for show fields of a table
+```bash
+
+show fields from table_name
+
+```
+----------------------------
 
 ### rails generate database 
 

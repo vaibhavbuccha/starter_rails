@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       # long method
       t.column 'first_name',:string,:limit => 25
+      #short method
       t.string 'last_name',:limit => 25
       t.string 'email',:default=>'',:null => false
       t.string 'password',:limit => 25
