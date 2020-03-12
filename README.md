@@ -22,6 +22,28 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+---
+#### Access mysql databases
+
+* for auth
+```bash
+mysql -u root -p 
+
+```
+* for see all databases
+```bash
+show databases;
+```
+---
+* for use an database
+```bash
+use dbname;
+```
+* for show all tables of a db
+```bash
+show tables;
+```
+
 
 ### rails generate database 
 
