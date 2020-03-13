@@ -47,8 +47,15 @@ show tables;
 * for show fields of a table
 ```bash
 
-show fields from table_name
+show fields from table_name;
 
+```
+
+* show table data
+
+```bash
+
+select * from table_name;
 ```
 ----------------------------
 
@@ -72,6 +79,8 @@ rails generate controller controller_name view_name
 ```
 > it create and controller and a view folder with view file 
 
+## Migrations
+---
 ### create migration 
 
 ```bash
@@ -96,3 +105,40 @@ rails generate model model_name
 rails db:migrate
 
 ```
+
+### roleback, revert, remove migration
+
+```bash
+
+rails db:migrate VERSION=0
+```
+
+| Tables_in_myapp_development |
+|-----------------------------|
+| ar_internal_metadata        |
+| schema_migrations           |
+
+
+
+### check status of migration
+```bash
+
+rails db:migrate:status
+
+```
+| *Status* |  *Migration ID*  |  *Migration Name*
+|--------|----------------|------------------------
+|  down  | 20200312105632 | Do nothing
+|  down  | 20200312110153 | Create users
+
+### run a specific migration
+
+```bash
+
+rails db:migrate VERSION=version_no
+
+```
+
+
+---
+
