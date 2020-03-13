@@ -139,6 +139,37 @@ rails db:migrate VERSION=version_no
 
 ```
 
+### migration methods
+
+#### running up and down methods
+```bash
+
+rails db:migrate:up VERSION=version_no
+
+rails db:migrate:down VERSION=version_no
+
+```
+
+### basic migration functions
+
+```rb
+=begin
+  
+  some basic methods for migration or database changes
+
+  rename table name  =>  rename_table('current_table_name','new_table_name')
+  add column in table => add_column('tbl_name','column_name','datatype','limit','default'.... etc ,':after => column_name')
+  change column => change_column('tbl_name','column_name',characterstic.......)
+  rename column => rename_column('tbl_name','current_column_name','new_column_name')
+  add index => add_index('tbl_name','column_name')
+  remove column => remove_column('tbl_name','column_name')
+  remove index => remove_index('tbl_name','column_name') 
+
+=end
+
+
+```
+
 
 ---
 
