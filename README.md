@@ -169,7 +169,25 @@ rails db:migrate:down VERSION=version_no
 
 
 ```
+> nameing convention in ruby the model name is similar to the migration table name else it throught error but we can handle this via 2 ways first using code in model mention bellow.
 
+```rb
+class User < ApplicationRecord
+
+    self.table_name = "admin_users"
+end
+
+```
+> otherwise we have to change the file name and model name
+
+```rb
+
+class AdminUser < ApplicationRecord
+
+    # self.table_name = "admin_users"
+end
+
+```
 
 ---
 
