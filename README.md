@@ -260,5 +260,40 @@ var.destroy
 
 ```
 
+---
+### REST And Resourceful Apis
+
+> #*REST =>*# representational state transfer
+> don't perform procedures
+> perform state transformations upon resources
+
+* generate controller and views for REST
+```sh
+rails generate controller subject index new show edit delete
+```
+---
+
+### show all routes
+```rails
+rails routes
+```
+
+
+---
+
+### url creation
+```rb
+# 1st way
+<%= link_to('show', '{subjects/#{subjects.id}}' ) %>
+
+# 2nd way
+
+<%= link_to('show',{:controller =>'subjects',:action => 'show',:id =>subjects.id }) %>
+
+# 3rd way resourcefull routes
+<%= link_to('show' , subject_path(subject.id)) %>
+
+
+```
 
 

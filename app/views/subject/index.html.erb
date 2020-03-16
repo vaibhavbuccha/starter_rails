@@ -1,0 +1,35 @@
+
+
+<div>
+    <h1>Subjects</h1>
+    <%= link_to("Add new Subject" ,'#')  %>
+
+
+ 
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Subject</th>
+            <th>Visible</th>
+            <th> Pages </th>
+            <th>Action</th>
+        </tr>
+        <% i = 1 %>
+        <% @subjects.each do |subject|  %>
+            <tr>
+                <td><%= subject.position %></td>
+                <td><%= subject.name %></td>
+                <td><%= subject.visible ? 'Yes' : 'No' %></td>
+                <td><%= subject.pages.size %> </td>
+                <td>
+                    <%= link_to('show','#') %>
+                    <%= link_to('edit' , '#') %>
+                    <%= link_to('delete','#')%>
+                </td>
+                <% i = i+1 %>
+            </tr>
+        <%end%>
+    </table>
+
+</div>
