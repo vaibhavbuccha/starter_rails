@@ -295,5 +295,59 @@ rails routes
 
 
 ```
+---
+
+### form helpers
+
+- create form with action methods
+```rb
+ <%= form_for(@subject, :url => {:controller => 'subjects'} , :method => 'post' ) do |f| %>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>
+                    <%= f.text_field(:name) %>
+                </td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td>
+                    <%= f.number_field(:position) %>
+                </td>
+            </tr>
+            <tr>
+                <th>Visible</th>
+                <td>
+                     True <%= f.radio_button(:visible , 'true') %>
+                     False <%= f.radio_button(:visible , 'false') %>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2>
+                   <%= f.submit(:create) %>
+                </td>
+            </tr>
+        </table>
+
+    <%end%>
+
+```
+> form_for create form for subject url shows detination where form is submited method shows the mode of submittion. 
+> form helpers also helps in craeting fields .
+> - some are as follows.
+>  <%= f.text_field(:name) %>   =>  <input type="text" name="subject[name]" id="subject_name">
+> <%= f.number_field(:position) %>  => <input type="number" name="subject[position]" id="subject_position">
+> <%= f.radio_button(:visible , 'true',:checked => true) %><input type="radio" value="true" checked="checked" name="subject[visible]" id="subject_visible_true">
+
+
+
+
+
+
+
+
+
+---
 
 

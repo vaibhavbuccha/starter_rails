@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
 # default route
   get ':controller(/:action(/:id))'
-
+  
 #root route
   root "home#index"
 
