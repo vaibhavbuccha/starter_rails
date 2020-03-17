@@ -1,5 +1,5 @@
-class SubjectController < ApplicationController
-
+class SubjectsController < ApplicationController
+  
   layout false
 
   def index
@@ -7,11 +7,11 @@ class SubjectController < ApplicationController
   end
 
   def new
-    @subject = Subject.new({:name => 'Default'})
-  end
+    @subject = Subject.new({:name=>"java",:position=>6})
+  end 
 
   def create
-    @subject = Subject.new(subject_params)
+    @subject = Subject.new(subject_Params)
     if @subject.save
       redirect_to(subjects_path)
     else
@@ -21,6 +21,7 @@ class SubjectController < ApplicationController
 
   def show
     @subjects = Subject.find(params[:id])
+
   end
 
   def edit
@@ -35,9 +36,8 @@ class SubjectController < ApplicationController
   def destroy
   end
 
-  private
-  def subject_params
+  def subject_Params
     params.required(:subject).permit(:name,:position,:visible)
   end
-  
+
 end

@@ -1,0 +1,31 @@
+<div>
+    <h3>Home</h3>
+    <br>
+        <%= link_to('Add new subject',{:controller=>"Subjects",:action=>'new'}) %>
+    <br>
+    <table>
+        <thead>
+            <th>#</th>
+            <th>Subject name</th>
+            <th>Visible</th>
+            <th>Pages</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <% @subjects.each do |subject| %>
+            <tr>
+                <td><%= subject.position %></td>
+                <td><%= subject.name%></td>
+                <td><%= subject.visible ? 'Yes': 'No'  %></td>
+                <td><%= subject.pages.size%></td>
+                <td>
+                <%= link_to('show', {:controller=> "Subjects" ,:action=>"show",:id=>subject.id }) %>
+                    <%=  link_to("edit", '#' )  %>
+                    <%=  link_to("delete", '#' )  %>
+                </td>
+            </tr>
+            <%end%>
+        </tbody>
+    </table>
+</div>  
+

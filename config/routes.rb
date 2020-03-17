@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 =begin
+  get 'subjects/index'
+  get 'subjects/new'
+  get 'subjects/show'
+  get 'subjects/edit'
+  get 'subjects/delete'
+=end
+=begin
   get 'subject/index'
   get 'subject/new'
   get 'subject/show'
