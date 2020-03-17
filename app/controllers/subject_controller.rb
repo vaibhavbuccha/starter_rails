@@ -13,6 +13,7 @@ class SubjectController < ApplicationController
   end
 
   def show
+    @subjects = Subject.find(params[:id])
   end
 
   def edit

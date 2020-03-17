@@ -288,7 +288,7 @@ rails routes
 
 # 2nd way
 
-<%= link_to('show',{:controller =>'subjects',:action => 'show',:id =>subjects.id }) %>
+ <%= link_to('show',{:controller=>"subject",:action=>'show',:id=>subject.id},:class=>'action show') %>
 
 # 3rd way resourcefull routes
 <%= link_to('show' , subject_path(subject.id)) %>

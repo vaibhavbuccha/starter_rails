@@ -7,7 +7,7 @@
 
  
 
-    <table>
+    <table width="100%" border="1">
         <tr>
             <th>#</th>
             <th>Subject</th>
@@ -23,7 +23,8 @@
                 <td><%= subject.visible ? 'Yes' : 'No' %></td>
                 <td><%= subject.pages.size %> </td>
                 <td>
-                    <%= link_to('show','#') %>
+                    <!--<%= link_to('show',subject_path(subject.id),:class=>'action show') %>-->
+                    <%= link_to('show',{:controller=>"subject",:action=>'show',:id=>subject.id},:class=>'action show') %>
                     <%= link_to('edit' , '#') %>
                     <%= link_to('delete','#')%>
                 </td>
