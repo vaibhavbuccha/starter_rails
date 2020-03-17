@@ -1,4 +1,38 @@
 
-<%= @subjects  %>
-  
+<h3>Suject details</h3>
+
+<%= link_to("Back to home",{:controller => 'subject'}) %>
+
+ <table border='1' width="100%" >
+    <tr>
+        <th>Name</th>
+        <td><%= @subjects.name %></td>
+    </tr>
+    <tr>
+        <th>Visible</th>
+        <td><%= @subjects.visible ? 'Yes':'No' %></td>
+    </tr>
+    <tr>
+        <th>Pages</th>
+        <td><%= @subjects.pages.size %></td>
+    </tr>
+    <tr>
+        <th>Page info</th>
+        <td>
+            <% @subjects.pages.each do |page| %>
+                <div>
+                    <%= page.name %> , <%= page.position %> , <%= page.visible ? 'Yes' : 'No' %>
+                </div>   
+            <%end%>
+        </td>
+    </tr>
+    <tr>
+        <th>Created At</th>
+        <td><%= @subjects.created_at %></td>
+    </tr>
+    <tr>
+        <th>Updated At</th>
+        <td><%= @subjects.updated_at %></td>
+    </tr>
+ </table>
 
