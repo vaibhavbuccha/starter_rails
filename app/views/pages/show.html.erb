@@ -1,0 +1,43 @@
+<% if !flash[:notice].blank? %>
+    <div class="notice">
+        <%= flash[:notice] %>
+    </div>
+<%end%>
+
+
+<div>
+	<h3>Show Details Of Page</h3>
+	<%= link_to('Back to home',pages_path()) %>
+	
+	<table>
+		<tr>
+			<th>Name : </th>
+			<td><%= @page.name %></td>
+		</tr>
+		<tr>
+			<th>Position : </th>
+			<td><%= @page.position %></td>
+		</tr>
+		<tr>
+			<th>Visiblity : </th>
+			<td><%= @page.visible ? 'Yes' : 'No' %></td>
+		</tr>
+		<tr>
+			<th>Permalink : </th>
+			<td><%= @page.permalink  %></td>
+		</tr>
+		<tr>
+			<th>Subject Belongs To : </th>
+			<td><%= @page.subject.name  %></td>
+		</tr>
+		<tr>
+			<th>Created At : </th>
+			<td><%= @page.created_at  %></td>
+		</tr>
+		<tr>
+			<th>Updated At : </th>
+			<td><%= @page.updated_at  %></td>
+		</tr>
+	</table>
+
+</div>

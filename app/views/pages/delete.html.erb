@@ -1,0 +1,14 @@
+<div>
+	<h3>
+		Delete Page
+	</h3>
+	<%= link_to("Back to home page" , pages_path()) %>
+	
+	<%= form_for(@page , :url => page_path(@page),:method => 'delete') do |f|  %>
+		
+		<b>Refrence : </b><%= @page.name %>
+		<br>
+		<%= f.submit("delete page") %>
+	<%end%>
+
+</div>

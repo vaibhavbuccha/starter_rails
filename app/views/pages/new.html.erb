@@ -1,0 +1,44 @@
+
+<div>
+	<h3>Add page</h3>
+	<%= link_to("back to home",pages_path()) %>
+	
+	<%= form_for(@page , :url=>pages_path() , :method=>'post') do |f| %>
+		<table>
+			<tr>
+				<th>Name : </th>
+				<td><%= f.text_field(:name) %></td>
+			</tr>
+			<tr>
+				<th>Position : </th>
+				<td><%= f.number_field(:position) %></td>
+			</tr>
+			<tr>
+				<th>Permalink : </th>
+				<td><%= f.text_field(:permalink) %></td>
+			</tr>	
+			<tr>
+				<th>Visible : </th>
+				<td>
+					True : <%= f.radio_button(:visible,value = true) %>
+					False : <%= f.radio_button(:visible,value = false) %>
+				</td>
+			</tr>
+			<tr>
+				<th>Subject Belongs To :</th>
+				<td>
+					<select name="page[subject_id]" id="page_subject_id">
+						<% @pages.each do |p|  %>
+							<option value="<%= p.subject.id %>" ><%= p.subject.name %></option>
+						<%end%>
+					</select>
+				</td>
+			</tr>	
+			<tr>
+				<td colspan="2"><%= f.submit("Create Page") %></td>
+			</tr>		
+		</table>
+	<%end%>
+
+
+</div>
