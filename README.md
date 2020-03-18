@@ -340,14 +340,31 @@ rails routes
 > <%= f.number_field(:position) %>  => <input type="number" name="subject[position]" id="subject_position">
 > <%= f.radio_button(:visible , 'true',:checked => true) %><input type="radio" value="true" checked="checked" name="subject[visible]" id="subject_visible_true">
 
-
-
-
-
-
-
-
-
 ---
 
+### Flash hash
+---
+
+> Flash is use for show the message when action is perform flash have ability to store last action.
+
+> Flash is created before the redirection
+
+```rb
+
+  flash[:flash_name] = "message"
+  redirect_to(path)
+
+```
+> For show the flash message we have to display flash message in view file.
+
+```rb
+
+    <% if !flash[:notice].blank? %>
+        <div class='notice' >
+            <%= flash[:notice] %>
+        </div>
+    <%end%>
+```
+
+---
 

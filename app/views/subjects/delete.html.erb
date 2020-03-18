@@ -1,2 +1,12 @@
-<h1>Subjects#delete</h1>
-<p>Find me in app/views/subjects/delete.html.erb</p>
+<div>
+	<h1>
+		Delete subject
+	</h1>
+	<%= link_to('Back to home', subjects_path ) %>
+	<%= form_for(@subject,:url => subject_path(@subject),:method => 'delete') do |f| %>
+		
+		<b>Refrence : </b> <%= @subject.name %>
+		<br>
+		<%= f.submit("Delete subject") %>
+	<%end%>
+</div>

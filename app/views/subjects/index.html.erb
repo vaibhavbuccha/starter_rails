@@ -1,3 +1,9 @@
+<% if !flash[:notice].blank? %>
+    <div class="notice">
+        <%= flash[:notice] %>
+    </div>
+<%end%>
+
 <div>
     <h3>Home</h3>
     <br>
@@ -21,7 +27,7 @@
                 <td>
                 <%= link_to('show', {:controller=> "Subjects" ,:action=>"show",:id=>subject.id }) %>
                     <%=  link_to("edit", {:controller=>"Subjects" ,:action=>"edit",:id=>subject.id  } )  %>
-                    <%=  link_to("delete", '#' )  %>
+                    <%=  link_to("delete", {:controller=>"Subjects" ,:action=>"delete",:id=>subject.id  } )  %>
                 </td>
             </tr>
             <%end%>
