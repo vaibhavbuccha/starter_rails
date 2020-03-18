@@ -20,7 +20,7 @@
                 <td><%= subject.pages.size%></td>
                 <td>
                 <%= link_to('show', {:controller=> "Subjects" ,:action=>"show",:id=>subject.id }) %>
-                    <%=  link_to("edit", '#' )  %>
+                    <%=  link_to("edit", {:controller=>"Subjects" ,:action=>"edit",:id=>subject.id  } )  %>
                     <%=  link_to("delete", '#' )  %>
                 </td>
             </tr>

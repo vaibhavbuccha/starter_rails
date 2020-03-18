@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get ':controller(/:action(/:id))'
   
 #root route
-  root "home#index"
+  root "subjects#index"
 
 # resourcefull routes
   resources :subjects do
