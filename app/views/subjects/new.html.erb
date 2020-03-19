@@ -1,25 +1,9 @@
 <div  style="margin: 130px auto 0;padding: 20px;background:rgb(0,0,0,.5);width:400px; ">
     <h3>Add Subject</h3>
-    <table>
         <%= form_for(@subject ,:url => {:controller => "subjects",:action=>"create"},:method=>'post' ) do |f| %>
-            <tr>
-                <th>Name : </th>
-                <td><%=  f.text_field(:name , placeholder: "Please enter subject name") %></td>
-            </tr>
-            <tr>
-                <th>Position : </th>
-                <td><%=  f.number_field(:position,placeholder: "Please enter position") %></td>
-            </tr>
-            <tr>
-                <th>Visible : </th>
-                <td>
-                    True <%=  f.radio_button(:visible , true) %>
-                    False <%= f.radio_button(:visible , false) %>
-                </td>
-            </tr>
-            <tr>
-                <td colspan=2 ><%= f.submit(:create) %></td>
-            </tr>
+            <%= render(:partial => 'form',:locals => {:f => f}) %>
+            
+            <%= f.submit(:create) %>
+            
         <%end%>
-    </table>
 </div>  

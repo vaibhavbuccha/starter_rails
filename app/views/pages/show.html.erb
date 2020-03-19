@@ -1,15 +1,10 @@
-<% if !flash[:notice].blank? %>
-    <div class="notice">
-        <%= flash[:notice] %>
-    </div>
-<%end%>
 
 
 <div>
 	<h3>Show Details Of Page</h3>
-	<%= link_to('Back to home',pages_path()) %>
+	<%= link_to('Back to home',pages_path() , :class=>"btn btn-info") %>
 	
-	<table>
+	<table class="table table-bordered table-striped">
 		<tr>
 			<th>Name : </th>
 			<td><%= @page.name %></td>

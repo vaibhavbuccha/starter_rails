@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>
+			Ruby Starter bunddle
+		</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	</head>
+	<body>
+		
+
+		<%= yield %>
+	</body>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script>
+		<% if !flash[:notice].blank? %>
+		swal({
+		  title: "Success",
+		  text: "<%= flash[:notice]  %>",
+		  icon: "success",
+		  button: "Aww yiss!",
+		});
+		
+			
+		<%end%>
+
+	</script>
+
+
+</html>

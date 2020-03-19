@@ -367,4 +367,35 @@ rails routes
 ```
 
 ---
+### Layouts
+---
+- create a layout in view/layouts and we can use it as template our main content is placed using yeild.
+- and we also have to set template in controller. 
+
+
+---
+### partial template
+--- 
+> partial template helps us to rewrite the code which is same and uses many places. we can also say that write once use many places. it reduse our code and also not need to change at many places.
+
+###### partial template naming convention 
+* file name start with ( _ )  like _form.html.erb
+
+
+###### render template on a view
+
+```rb 
+<%= render(:partial => 'filename' , :locals => {:f => f}  ) %>
+
+=begin
+    
+    file name is written without ( _ )
+
+    locals give accessability of the variable in partial template like here f is accessable in partial template. 
+
+=end
+
+```
+
+
 

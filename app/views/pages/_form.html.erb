@@ -1,0 +1,23 @@
+<table class="table table-bordered table-striped">
+			<tr>
+				<th>Name : </th>
+				<td><%= f.text_field(:name ,:class=>"form-control") %></td>
+			</tr>
+			<tr>
+				<th>Position : </th>
+				<td><%= f.number_field(:position ,:class=>"form-control") %></td>
+			</tr>
+			<tr>
+				<th>Permalink : </th>
+				<td><%= f.text_field(:permalink ,:class=>"form-control") %></td>
+			</tr>	
+			<tr>
+				<th>Visible : </th>
+				<td>
+					True : <%= f.radio_button(:visible,value = true) %>
+					False : <%= f.radio_button(:visible,value = false) %>
+				</td>
+			</tr>
+			<tr>
+				<th>Subject Belongs To :</th>
+				<td>

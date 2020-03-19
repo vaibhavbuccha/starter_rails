@@ -2,13 +2,13 @@
 	<h3>
 		Delete Page
 	</h3>
-	<%= link_to("Back to home page" , pages_path()) %>
+	<%= link_to("Back to home page" , pages_path() , :class=>"btn btn-info") %>
 	
 	<%= form_for(@page , :url => page_path(@page),:method => 'delete') do |f|  %>
 		
 		<b>Refrence : </b><%= @page.name %>
 		<br>
-		<%= f.submit("delete page") %>
+		<%= f.submit("delete page",:class=>"btn btn-sm btn-warning") %>
 	<%end%>
 
 </div>

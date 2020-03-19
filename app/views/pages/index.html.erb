@@ -1,14 +1,11 @@
-<% if !flash[:notice].blank? %>
-    <div class="notice">
-        <%= flash[:notice] %>
-    </div>
-<%end%>
+
 <div>
-	<h1>
+	<h3>
 		home
-	</h1>
-	<%= link_to('Add new page',{:controller=>"pages" , :action=>"new"}) %>
-	<table>
+	</h3>
+	<%= link_to('Add new page',{:controller=>"pages" , :action=>"new"} , :class=>"btn btn-info" ) %>
+	<br>
+	<table class="table table-bordered table-striped" >
 		<thead>
 			<th>position</th>
 			<th>name</th>
@@ -26,9 +23,9 @@
 				<td><%= page.subject.name %></td>
 				<td><%= page.permalink %></td>
 				<td>
-					<%= link_to('show',{:controller=>"Pages",:action=>"show",:id=>page.id}) %> 
-					<%= link_to('edit',{:controller=>"Pages",:action=>"edit",:id=>page.id}) %> 
-					<%= link_to('delete',{:controller=>"Pages",:action=>"delete",:id=>page.id}) %>
+					<%= link_to('show',{:controller=>"Pages",:action=>"show",:id=>page.id},:class=>"btn btn-success btn-sm") %> 
+					<%= link_to('edit',{:controller=>"Pages",:action=>"edit",:id=>page.id},:class=>"btn btn-warning btn-sm") %> 
+					<%= link_to('delete',{:controller=>"Pages",:action=>"delete",:id=>page.id},:class=>"btn btn-danger btn-sm") %>
 				</td>
 			</tr>
 			<%end%>
